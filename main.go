@@ -1,10 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
-  fmt.Println("Hello world")
-  fmt.Println("Hello world 2 ")
-  fmt.Println("aljshfalksjf")
-  fmt.Println("lasfkaj")
+	ports := ":8080"
+	router := NewRouter()
+	log.Fatal(http.ListenAndServe(ports, router))
 }
